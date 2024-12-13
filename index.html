@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Reminder App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="container text-center my-5" id="homePage">
+        <h1 class="animated-title">BIRTHDAY REMINDER APP</h1>
+        <div id="countdownWidget" class="my-3"></div>
+        <button class="btn btn-primary my-3 fade-in" id="addReminderBtn"><i class="fas fa-plus-circle"></i> ADD REMINDER</button>
+        <button class="btn btn-success my-3 fade-in" id="viewRemindersBtn"><i class="fas fa-birthday-cake"></i> VIEW REMINDERS</button>
+        <button class="btn btn-info my-3 fade-in" id="monthlySummaryBtn"><i class="fas fa-calendar-alt"></i> MONTHLY SUMMARY</button>
+        <button class="btn btn-dark my-3 fade-in" id="darkModeToggle"><i class="fas fa-adjust"></i> DARK MODE</button>
+    </div>
+
+    <div id="addReminderPage" class="container d-none">
+        <h2 class="animated-title">ADD A NEW REMINDER</h2>
+        <form id="reminderForm">
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="birthday">BIRTHDAY</label>
+                <input type="date" class="form-control" id="birthday" required>
+            </div>
+            <button type="submit" class="btn btn-primary fade-in"><i class="fas fa-save"></i> SAVE REMINDER</button>
+        </form>
+        <div id="feedbackMessageAdd" class="alert d-none mt-3 fade-in" role="alert"></div>
+        <button class="btn btn-secondary my-3 fade-in" id="backToHomeFromAdd"><i class="fas fa-home"></i> BACK TO HOME</button>
+    </div>
+
+    <div id="viewRemindersPage" class="container d-none">
+        <h2 class="animated-title">ALL REMINDERS</h2>
+        <div id="feedbackMessageView" class="alert d-none mt-3 fade-in" role="alert"></div>
+        <input type="text" id="searchReminderInput" class="form-control my-3 fade-in" placeholder="Search Reminders...">
+        <table class="table table-hover table-bordered fade-in">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>BIRTHDAY</th>
+                    <th>AGE</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody id="remindersTable"></tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center fade-in" id="pagination"></ul>
+        </nav>
+        <button class="btn btn-secondary my-3 fade-in" id="exportCsvBtn"><i class="fas fa-file-csv"></i> EXPORT TO CSV</button>
+        <button class="btn btn-secondary my-3 fade-in" id="backToHomeFromView"><i class="fas fa-home"></i> BACK TO HOME</button>
+    </div>
+
+    <div id="monthlySummaryPage" class="container d-none">
+        <h2 class="animated-title">MONTHLY SUMMARY</h2>
+        <div id="monthlySummaryContainer" class="d-flex flex-column align-items-center fade-in"></div>
+        <button class="btn btn-secondary my-3 fade-in" id="backToHomeFromSummary"><i class="fas fa-home"></i> BACK TO HOME</button>
+    </div>
+
+    <div class="modal fade" id="addReminderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ADD/EDIT REMINDER</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="modalReminderForm">
+                        <div class="form-group">
+                            <label for="modalName">NAME</label>
+                            <input type="text" class="form-control" id="modalName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalBirthday">BIRTHDAY</label>
+                            <input type="date" class="form-control" id="modalBirthday" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary fade-in"><i class="fas fa-save"></i> SAVE REMINDER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

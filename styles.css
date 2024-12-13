@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+h1, h2, th {
+    color: #343a40;
+    text-transform: uppercase;
+    animation: fadeIn 2s;
+}
+
+.btn {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    animation: fadeIn 2s;
+}
+
+#countdownWidget {
+    font-size: 1.5em;
+    color: #007bff;
+    animation: fadeIn 2s;
+}
+
+.countdown-title {
+    font-weight: bold;
+    color: #343a40;
+    text-transform: uppercase;
+}
+
+.table {
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+    animation: fadeIn 2s;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #dee2e6;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+
+.fa-trash-alt {
+    cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+    color: #007bff;
+}
+
+#remindersTable td, #remindersTable th {
+    vertical-align: middle;
+}
+
+.alert {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: auto;
+    animation: fadeIn 2s;
+}
+
+.monthly-summary {
+    margin-bottom: 20px;
+    width: 100%;
+    animation: fadeIn 2s;
+}
+
+.monthly-summary table {
+    width: 100%;
+}
+
+.monthly-summary h4 {
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #007bff;
+    color: white;
+}
+
+.table-gradient {
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    color: #fff;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .table, .dark-mode .table th, .dark-mode .table td {
+    color: #ffffff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animated-title {
+    animation: slideInLeft 1.5s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
